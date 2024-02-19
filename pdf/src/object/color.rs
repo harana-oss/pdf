@@ -172,7 +172,7 @@ impl ObjectWrite for ColorSpace {
                 Ok(Primitive::Array(vec![Primitive::name("Indexed"), base, hival, lookup]))
             }
             ref p => {
-                dbg!(p);
+                debug!("{:?}", p);
                 unimplemented!()
             }
         }

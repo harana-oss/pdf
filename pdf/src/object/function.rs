@@ -119,7 +119,7 @@ impl FromDict for Function {
                 Ok(Function::Interpolated(parts))
             },
             i => {
-                dbg!(raw);
+                debug!("{:?}", raw);
                 bail!("unsupported function type {}", i)
             }
         }

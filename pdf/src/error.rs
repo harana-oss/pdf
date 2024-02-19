@@ -202,6 +202,13 @@ impl globalcache::ValueSize for PdfError {
     }
 }
 
+fn trace(err: &dyn Error, depth: usize) {
+    trace!("{}: {}", depth, err);
+    if let Some(source) = err.source() {
+        trace(source, depth+1);
+    }
+}
+
 #[derive(Debug)]
 pub struct Context(pub Vec<(&'static str, String)>);
 impl std::fmt::Display for Context {
