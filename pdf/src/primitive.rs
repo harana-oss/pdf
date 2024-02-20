@@ -802,6 +802,7 @@ impl Object for Date {
                         rel
                     })
                 } else {
+                    println!("Failed date: {}", s);
                     bail!("Failed parsing date");
                 }
             }
